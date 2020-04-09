@@ -13,5 +13,10 @@
 }
 
 .results-block {
-  display: inline-block
+  display: inline-block;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
