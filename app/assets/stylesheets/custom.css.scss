@@ -14,9 +14,14 @@
 
 .results-block {
   display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .center {
   display: flex;
   justify-content: center;
+}
+
+.logout-btn {
+  margin-right: 20px;
 }
