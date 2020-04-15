@@ -30,12 +30,12 @@ class User < ApplicationRecord
     "Anonymous"
   end
 
-  def self.search 
+  def self.search(param)
     param.strip!
     to_send_back = (first_name_matches(param) + last_name_matches(param) + email_matches(param)).uniq
     return nil unless to_send_back
     to_send_back
-  end 
+  end
 
   def self.first_name_matches(param)
     matches('first_name', param)
@@ -43,13 +43,13 @@ class User < ApplicationRecord
 
   def self.last_name_matches(param)
     matches('last_name', param)
-  end 
+  end
 
   def self.email_matches(param)
     matches('email', param)
-  end 
+  end
 
   def self.matches(field_name, param)
-    where("#{field.name} like ?", "%#{param}%")
-  end 
+    where("#{field_name} like ?", "%#{param}%")
+  end
 end
